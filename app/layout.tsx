@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import AppLayout from "@/components/AppLayout";
+// import AppLayout from "@/components/AppLayout";
 import "./globals.css";
 
 export default function RootLayout({

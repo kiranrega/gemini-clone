@@ -1,8 +1,9 @@
 // Single Message Component
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { Message } from "@/lib/types";
+import Image from "next/image";
 
 interface MessageComponentProps {
   message: Message;
@@ -25,7 +26,7 @@ const MessageComponent = ({ message }: MessageComponentProps) => {
         {isUser ? 'U' : 'G'}
       </div>
       <div className={`max-w-xs md:max-w-md lg:max-w-lg p-3 rounded-lg ${isUser ? 'bg-indigo-500 text-white rounded-br-none' : 'bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-bl-none'}`}>
-        {message.image && <img src={message.image} alt="Uploaded content" className="rounded-md mb-2 max-h-60"/>}
+        {message.image && <Image src={message.image} alt="Uploaded content" className="rounded-md mb-2 max-h-60"/>}
         <p className="text-sm break-words">{message.text}</p>
         <p className="text-xs opacity-70 mt-1 text-right">{new Date(message.timestamp).toLocaleTimeString()}</p>
       </div>

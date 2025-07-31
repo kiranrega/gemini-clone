@@ -7,6 +7,7 @@ import MessageSkeleton from "./ui/Skeleton";
 import { Message } from "@/lib/types";
 import { toast } from "react-hot-toast";
 import TypingIndicator from "./TypingIndicator";
+import Image from "next/image";
 
 // Chatroom Page Component
 const ChatroomPage = ({ chatId }: { chatId: string }) => {
@@ -145,7 +146,7 @@ const ChatroomPage = ({ chatId }: { chatId: string }) => {
                 <div className="p-4 border-t border-gray-200 dark:border-gray-700">
                     {imagePreview && (
                         <div className="relative w-24 h-24 mb-2">
-                            <img src={imagePreview} alt="Preview" className="w-full h-full object-cover rounded-md" />
+                            <Image src={imagePreview} alt="Preview" className="w-full h-full object-cover rounded-md" />
                             <button onClick={() => setImagePreview(null)} className="absolute -top-2 -right-2 bg-gray-800 text-white rounded-full p-1">
                                 <X size={16} />
                             </button>
@@ -167,7 +168,7 @@ const ChatroomPage = ({ chatId }: { chatId: string }) => {
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30">
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-sm w-full">
                         <h3 className="text-lg font-bold">Delete Chatroom?</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Are you sure you want to delete "{chatroom.title}"? This action cannot be undone.</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Are you sure you want to delete {chatroom.title}? This action cannot be undone.</p>
                         <div className="mt-6 flex justify-end gap-3">
                             <button onClick={() => setIsConfirmingDelete(false)} className="px-4 py-2 rounded-md border dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">Cancel</button>
                             <button onClick={handleDelete} className="px-4 py-2 rounded-md bg-red-600 text-white hover:bg-red-700">Delete</button>
