@@ -34,7 +34,7 @@ const CountryCodeSelector = ({ field }: CountryCodeSelectorProps) => {
             name: c.name.common,
             code: `${c.idd.root}${c.idd.suffixes[0]}`,
           }))
-          .sort((a: CountryCodes, b: CountryCodes) => a.name.common.localeCompare(b.name.common));
+          .sort((a: Country, b: Country) => a.name.localeCompare(b.name));
         setCountries(formattedCountries);
       } catch (error) {
         console.error("Error fetching country codes:", error);
