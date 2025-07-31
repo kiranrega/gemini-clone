@@ -1,10 +1,10 @@
-import { Country } from '@/lib/types';
+import { OTPFormData , Country} from '@/lib/types';
 import { useEffect, useState } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
 import {toast } from 'react-hot-toast';
 
 interface CountryCodeSelectorProps {
-  field: ControllerRenderProps<any, any>;
+  field: ControllerRenderProps<OTPFormData, 'countryCode'>;
 }
 
 interface CountryCodes {
